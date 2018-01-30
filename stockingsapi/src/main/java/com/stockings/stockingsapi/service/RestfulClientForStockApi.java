@@ -1,5 +1,6 @@
 package com.stockings.stockingsapi.service;
 
+import com.stockings.stockingsapi.model.StockData;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -16,7 +17,7 @@ public class RestfulClientForStockApi {
     RestTemplate restTemplate;
 
     @PostConstruct
-    public String getStockAPI(){
+    public StockData getStockAPI(){
 
         String apiURL = "https://www.alphavantage.co/query";
 
@@ -29,9 +30,9 @@ public class RestfulClientForStockApi {
                 .queryParam("datatype","json")
                 .queryParam("apikey","Z4DGG7FGNDV354HG");
 
-        String response = restTemplate.getForObject(uriComponentsBuilder.toUriString(), String.class);
+        StockData response = restTemplate.getForObject(uriComponentsBuilder.toUriString(), StockData.class);
 
-        System.out.println(response);
+        System.out.println(response.getMetadata().getOutputSize());
         return response;
     }
 

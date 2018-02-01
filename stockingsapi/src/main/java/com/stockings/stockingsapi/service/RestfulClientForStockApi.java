@@ -33,6 +33,7 @@ public class RestfulClientForStockApi {
         StockData response = restTemplate.getForObject(uriComponentsBuilder.toUriString(), StockData.class);
 
         System.out.println(response.getMetadata().getOutputSize());
+        System.out.println(response.getTimeSeries());
         return response;
     }
 

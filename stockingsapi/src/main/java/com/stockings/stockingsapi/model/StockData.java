@@ -2,13 +2,16 @@ package com.stockings.stockingsapi.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.Map;
+
+
 public class StockData {
 
     @JsonProperty("Meta Data")
     private Metadata metadata;
 
     @JsonProperty("Time Series (60min)")
-    private TimeSeries timeSeries;
+    private Map<String, DetailTimeSeries> timeSeries;
 
     public Metadata getMetadata() {
         return metadata;
@@ -18,11 +21,11 @@ public class StockData {
         this.metadata = metadata;
     }
 
-    public TimeSeries getTimeSeries() {
+    public Map<String, DetailTimeSeries> getTimeSeries() {
         return timeSeries;
     }
 
-    public void setTimeSeries(TimeSeries timeSeries) {
+    public void setTimeSeries(Map<String, DetailTimeSeries> timeSeries) {
         this.timeSeries = timeSeries;
     }
 }

@@ -16,7 +16,7 @@ public class RestfulClientForStockApi {
     @Autowired
     RestTemplate restTemplate;
 
-    @PostConstruct
+//    @PostConstruct
     public StockData getStockAPI(){
 
         String apiURL = "https://www.alphavantage.co/query";

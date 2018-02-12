@@ -1,0 +1,5 @@
+#alphavantage  Z4DGG7FGNDV354HG
+spring:
+  main:
+    banner-mode: off
+  profiles: dev

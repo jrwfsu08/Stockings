@@ -14,7 +14,11 @@ public class RestfulClientForStockApi {
     //TODO make a restful call to the stock API
 
     @Autowired
-    RestTemplate restTemplate;
+    public RestfulClientForStockApi(RestTemplate restTemplate){
+        this.restTemplate = restTemplate;
+    }
+
+    private RestTemplate restTemplate;
 
     @PostConstruct
     public StockData getStockAPI(){

@@ -15,9 +15,4 @@ public class StockingsapiApplication {
 		SpringApplication.run(StockingsapiApplication.class, args);
 	}
 
-	@Bean
-	public RestTemplate restTemplate(RestTemplateBuilder builder) {
-		return builder.build();
-	}
-
 }
